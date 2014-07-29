@@ -1,0 +1,17 @@
+#!/bin/bash
+
+projects=(
+  citrus-builder
+  citrus-api
+)
+
+for project in ${projects[@]}; do
+  echo -e "\033[1m[$project]\033[0m"
+  if [ -d $project ]; then
+    pushd $project 1>/dev/null
+    git pull
+    popd 1>/dev/null
+  else
+    git clone git@github.com:pawelpacana/${project}.git
+  fi
+done
