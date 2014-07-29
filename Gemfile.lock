@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    citrus-event-bus (0.0.1)
+      poseidon (= 0.0.4)
+    poseidon (0.0.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  citrus-event-bus

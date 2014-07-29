@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'citrus/event_bus'
+require 'irb'
+require 'irb/completion'
+
+def emit_event(type, body = {}) 
+  event = Citrus::EventBus::Event.for_type(type, body)
+  Citrus::EventBus::Publisher.new.(event)
+  event
+end
+
+if __FILE__ == $0
+  IRB.start
+end
